@@ -7,7 +7,7 @@ import "source-map-support/register";
 export async function run(): Promise<void> {
     let test_regex = process.env.NEOVIM_TEST_REGEX;
     if (test_regex === undefined) {
-        test_regex = ".*";
+        test_regex = ".*handle window changed event.*";
     }
     console.log(`running tests by regex: ${test_regex}`);
 

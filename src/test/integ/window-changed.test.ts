@@ -11,11 +11,12 @@ describe("handle window changed event", () => {
 
     const winIdTextMap = new Map<number, string>();
 
-    const findWinId = (text: string) => {
+    const findWinId = (text: string): number => {
         for (const [winId, winText] of winIdTextMap.entries()) {
             if (winText.includes(text)) return winId;
         }
-        return 0; // should not happen
+
+        throw new Error("Failed to find window with text " + text);
     };
 
     async function setWin(winId: number) {
